@@ -57,7 +57,7 @@ namespace Core.Model
 
         public bool Modify(Action<T> modify)
         {
-            ViAssert.True(!_isInContinuousModify, "You cannot use modify outside ContinuouslyModifyRegions");
+            ViAssert.True(!_isInContinuousModify, "You cannot use modify inside ContinuouslyModifyRegions");
             bool isSuccess;
             _modelSnapshot = JsonConvert.SerializeObject(Model);
 
